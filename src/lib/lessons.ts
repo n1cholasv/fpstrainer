@@ -21,10 +21,10 @@ export const defaultLessons: LessonData[] = [
       "Achieve 80%+ pre-aim accuracy in scenarios"
     ],
     gameRecommendations: [
-      "Aim Lab - Gridshot Ultimate",
-      "Kovaak's - 1Wall6Targets TE",
-      "CS2 - Aim_botz with crosshair placement focus",
-      "Valorant - Range with Hard difficulty bots"
+      "CS2 - Prefire maps (Yprac_mirage, Yprac_inferno)",
+      "CS2 - Aim_botz with crosshair placement discipline",
+      "Valorant - Range with crosshair placement focus",
+      "Aim Lab - Strafeshot (for moving crosshair placement)"
     ],
     difficulty: 1,
     minimumScore: 80.0,
@@ -59,10 +59,10 @@ export const defaultLessons: LessonData[] = [
       "Achieve sub-300ms reaction time with 70%+ accuracy"
     ],
     gameRecommendations: [
-      "Aim Lab - Sixshot",
+      "Aim Lab - Gridshot Ultimate",
+      "Aim Lab - Sixshot", 
       "Kovaak's - 1Wall6Targets TE",
-      "CS2 - Aim_botz flick training",
-      "Aim Lab - Spider Shot"
+      "CS2 - Aim_botz flick training"
     ],
     difficulty: 3,
     minimumScore: 70.0,
