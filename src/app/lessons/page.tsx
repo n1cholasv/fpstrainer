@@ -34,7 +34,7 @@ function getDifficultyStars(difficulty: number) {
 }
 
 export default async function LessonsPage() {
-  let lessons = [];
+  let lessons: Awaited<ReturnType<typeof getLessons>> = [];
   let error = null;
   
   try {
