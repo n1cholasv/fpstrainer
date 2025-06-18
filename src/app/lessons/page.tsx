@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getLessons } from '@/lib/actions';
+import { getLessons, initializeLessons } from '@/lib/actions';
 import { ProgressStatus } from '@prisma/client';
 
 function getStatusColor(status: ProgressStatus) {
@@ -32,6 +32,7 @@ function getDifficultyStars(difficulty: number) {
 }
 
 export default async function LessonsPage() {
+  await initializeLessons();
   const lessons = await getLessons();
 
   return (

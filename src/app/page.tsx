@@ -1,9 +1,6 @@
 import Link from "next/link";
-import { initializeLessons } from '@/lib/actions';
 
-export default async function Home() {
-  await initializeLessons();
-  
+export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white">
       <div className="container mx-auto px-6 py-12">
