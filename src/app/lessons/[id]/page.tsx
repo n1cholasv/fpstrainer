@@ -30,8 +30,9 @@ function getStatusText(status: ProgressStatus) {
   }
 }
 
-export default async function LessonPage({ params }: { params: { id: string } }) {
-  const lesson = await getLesson(params.id);
+export default async function LessonPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const lesson = await getLesson(id);
   
   if (!lesson) {
     notFound();

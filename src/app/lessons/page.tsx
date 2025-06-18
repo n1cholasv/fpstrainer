@@ -55,7 +55,6 @@ export default async function LessonsPage() {
         <div className="grid gap-6">
           {lessons.map((lesson) => {
             const progress = lesson.userProgress[0];
-            const latestMeasurement = lesson.measurements[0];
             const status = progress?.status || ProgressStatus.NOT_STARTED;
             
             return (
