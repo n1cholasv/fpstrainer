@@ -34,8 +34,16 @@ function getDifficultyStars(difficulty: number) {
 }
 
 export default async function LessonsPage() {
-  await initializeLessons();
-  const lessons = await getLessons();
+  let lessons = [];
+  let error = null;
+  
+  try {
+    await initializeLessons();
+    lessons = await getLessons();
+  } catch (e) {
+    console.error('Database error:', e);
+    error = 'Unable to connect to database. Please check your connection.';
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white">
@@ -55,7 +63,22 @@ export default async function LessonsPage() {
           </Link>
         </div>
 
+        {error && (
+          <div className="bg-red-500/20 border border-red-500 rounded-lg p-6 mb-8">
+            <h3 className="text-lg font-semibold text-red-400 mb-2">Database Connection Error</h3>
+            <p className="text-red-300">{error}</p>
+            <p className="text-sm text-red-400 mt-2">
+              Please ensure the Supabase database is properly configured and accessible.
+            </p>
+          </div>
+        )}
+
         <div className="grid gap-6">
+          {lessons.length === 0 && !error && (
+            <div className="text-center py-12">
+              <p className="text-slate-400">No lessons found. Please check your database connection.</p>
+            </div>
+          )}
           {lessons.map((lesson) => {
             const progress = lesson.userProgress[0];
             const status = progress?.status || ProgressStatus.NOT_STARTED;
