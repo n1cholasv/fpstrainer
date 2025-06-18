@@ -5,6 +5,8 @@ import { ProgressStatus } from '@prisma/client';
 import StartLessonButton from '@/components/StartLessonButton';
 import MeasurementForm from '@/components/MeasurementForm';
 
+export const dynamic = 'force-dynamic';
+
 function getStatusColor(status: ProgressStatus) {
   switch (status) {
     case ProgressStatus.COMPLETED:

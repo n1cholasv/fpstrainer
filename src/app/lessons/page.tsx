@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { getLessons, initializeLessons } from '@/lib/actions';
 import { ProgressStatus } from '@prisma/client';
 
+export const dynamic = 'force-dynamic';
+
 function getStatusColor(status: ProgressStatus) {
   switch (status) {
     case ProgressStatus.COMPLETED:

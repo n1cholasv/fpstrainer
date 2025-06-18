@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { getLessons } from '@/lib/actions';
 import { ProgressStatus } from '@prisma/client';
 
+export const dynamic = 'force-dynamic';
+
 function getProgressPercentage(status: ProgressStatus, bestScore?: number | null, minimumScore?: number | null) {
   if (status === ProgressStatus.COMPLETED || status === ProgressStatus.MASTERED) {
     return 100;
