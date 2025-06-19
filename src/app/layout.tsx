@@ -20,6 +20,18 @@ export const metadata: Metadata = {
     shortcut: '/favicon.svg',
     apple: '/favicon.svg',
   },
+  openGraph: {
+    title: 'FPS Trainer - Master Your Skills',
+    description: 'Improve your FPS gaming skills through deliberate practice and precise measurement tracking',
+    url: 'https://fpstrainer.vercel.app',
+    siteName: 'FPS Trainer',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'FPS Trainer',
+    description: 'Improve your FPS gaming skills through deliberate practice',
+  },
 };
 
 export default function RootLayout({
