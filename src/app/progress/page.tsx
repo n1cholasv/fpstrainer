@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getLessons } from '@/lib/actions';
+import { fetchLessons } from '@/lib/db';
 import { ProgressStatus } from '@prisma/client';
 
 export const dynamic = 'force-dynamic';
@@ -21,7 +21,7 @@ function getProgressPercentage(status: ProgressStatus, bestScore?: number | null
 }
 
 export default async function ProgressPage() {
-  const lessons = await getLessons();
+  const lessons = await fetchLessons();
   
   const totalLessons = lessons.length;
   const completedLessons = lessons.filter(lesson => {
