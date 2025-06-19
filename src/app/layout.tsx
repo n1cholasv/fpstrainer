@@ -16,9 +16,12 @@ export const metadata: Metadata = {
   title: "FPS Trainer - Master Your Skills",
   description: "Improve your FPS gaming skills through deliberate practice and precise measurement tracking",
   icons: {
-    icon: '/favicon.svg',
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.svg', type: 'image/svg+xml' }
+    ],
     shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
+    apple: '/apple-icon.svg',
   },
   openGraph: {
     title: 'FPS Trainer - Master Your Skills',
