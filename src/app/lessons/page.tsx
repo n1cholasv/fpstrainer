@@ -68,7 +68,7 @@ export default async function LessonsPage() {
             <h3 className="text-lg font-semibold text-red-400 mb-2">Database Connection Error</h3>
             <p className="text-red-300">{error}</p>
             <p className="text-sm text-red-400 mt-2">
-              Please ensure the Supabase database is properly configured and accessible.
+              Please ensure the PostgreSQL database is properly configured and accessible.
             </p>
           </div>
         )}
