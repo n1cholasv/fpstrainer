@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getLessons, initializeLessons } from '@/lib/actions';
+import { ensureLessonsExist, fetchLessons } from '@/lib/db';
 import { ProgressStatus } from '@prisma/client';
 
 export const dynamic = 'force-dynamic';
@@ -34,12 +34,12 @@ function getDifficultyStars(difficulty: number) {
 }
 
 export default async function LessonsPage() {
-  let lessons: Awaited<ReturnType<typeof getLessons>> = [];
+  let lessons: Awaited<ReturnType<typeof fetchLessons>> = [];
   let error = null;
   
   try {
-    await initializeLessons();
-    lessons = await getLessons();
+    await ensureLessonsExist();
+    lessons = await fetchLessons();
   } catch (e) {
     console.error('Database error:', e);
     error = 'Unable to connect to database. Please check your connection.';
